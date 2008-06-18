@@ -1,6 +1,6 @@
 %define module	XML-Grove
 %define version	0.46alpha
-%define release	%mkrel 9
+%define release	%mkrel 10
 
 Summary:	Provides the information set of parsed XML/HTML/SGML trees
 Name:		perl-%{module}
