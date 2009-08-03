@@ -1,19 +1,18 @@
-%define module	XML-Grove
-%define version	0.46alpha
-%define release	%mkrel 10
+%define upstream_name	 XML-Grove
+%define upstream_version 0.46alpha
+
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
 Summary:	Provides the information set of parsed XML/HTML/SGML trees
-Name:		perl-%{module}
-Version:	%{version}
-Release:	%{release}
 License:	Artistic
 Group:		Development/Perl
-Source0:	%{module}-%{version}.tar.bz2
-Url:		http://www.cpan.org
-BuildRequires:	perl-devel
-BuildRoot:	%{_tmppath}/%{name}-buildroot/
-Requires:	perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/XML/%{upstream_name}-%{upstream_version}.tar.bz2
+
 BuildArch:	noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 The XML::Grove Perl module provides simple access to the information
@@ -32,7 +31,7 @@ that provide the following:
    - create grove objects using an easy shorthand
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -49,5 +48,3 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %{_mandir}/*/*
 %{perl_vendorlib}/XML/*
-
-
