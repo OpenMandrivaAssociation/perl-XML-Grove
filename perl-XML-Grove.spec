@@ -3,7 +3,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	7
+Release:	8
 
 Summary:	Provides the information set of parsed XML/HTML/SGML trees
 License:	Artistic
